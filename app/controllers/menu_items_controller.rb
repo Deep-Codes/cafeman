@@ -15,7 +15,7 @@ class MenuItemsController < ApplicationController
     description = params[:description]
     price = params[:price]
     new_menu_item = MenuItem.create!(menu_id: menu_id, name: name, description: description, price: price)
-    render plain: "MenuItem Created with the name : #{new_menu_item[:name]}"
+    redirect_to menus_path
   end
 
   # ? => DELETE
@@ -23,6 +23,6 @@ class MenuItemsController < ApplicationController
     menu_item_id = params[:id]
     menu_item = MenuItem.find(menu_item_id)
     menu_item.destroy
-    render plain: "MenuItem Destroyed with the name : #{menu_item[:name]}"
+    redirect_to menus_path
   end
 end

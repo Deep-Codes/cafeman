@@ -12,3 +12,33 @@ table {
   table-layout: fixed;
   word-wrap: break-word;
 }
+/* Trash Icon Size */
+.trash {
+  width: 20px;
+}
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-field {
+  margin: 10px 5px;
+  display: block;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-field:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}

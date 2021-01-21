@@ -1,8 +1,9 @@
-<h1> 
-Welcome to Menu Page
+<h1 class='heading'> 
+Menu Page
 </h1>
 
-<% Menu.all.each do |it| %>
-  <h1><%= it.name %></h1>
-
+<% Menu.all.each do |el| %>
+  <h4><%= "#{el.id}. #{el.name}" %></h4>
+<%= render partial: "menu-table",
+           locals: { menu_data: MenuItem.menu_by_id(el.id) } %>
 <% end %>

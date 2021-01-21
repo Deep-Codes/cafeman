@@ -1,0 +1,20 @@
+<table class="table table-bordered my-20">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% menu_data.each do |item| %>
+        <tr>
+          <th scope="row"><%= item.id %></th>
+          <td ><%= item.name %></td>
+          <td><%= item.description %></td>
+          <td><%= item.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

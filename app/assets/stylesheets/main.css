@@ -1,0 +1,14 @@
+.heading {
+  margin: 40px 0px;
+}
+.container {
+  padding-top: 30px;
+}
+.my-20 {
+  margin: 20px 0px;
+}
+/* Fixes Boostrap different widths */
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}

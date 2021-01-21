@@ -1,7 +1,8 @@
 class MenuItem < ActiveRecord::Base
   belongs_to :menu
 
-  def show_menu_item
-    "#{id}:- #{name} | #{price} | #{description}"
+  # ? Shows Menu Based on menu_id
+  def self.menu_by_id(id)
+    all.where(menu_id: id)
   end
 end

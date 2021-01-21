@@ -4,13 +4,13 @@
 .container {
   padding-top: 30px;
 }
-.my-20 {
-  margin: 20px 0px;
-}
 /* Fixes Boostrap different widths */
 table {
   table-layout: fixed;
   word-wrap: break-word;
+}
+.menu-table-header {
+  margin-top: 25px;
 }
 /* Trash Icon Size */
 .trash {
@@ -41,4 +41,7 @@ table {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.form-label-header {
+  margin: 0px;
 }

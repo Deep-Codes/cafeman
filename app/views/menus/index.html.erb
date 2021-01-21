@@ -2,7 +2,7 @@
 Menu Page
 </h1>
 
-
+<h5 class='form-label-header'>Add Menu-Item</h5>
 <%= form_with(url: "/menu_items", method: "POST", class: "form-container") do %>
       <%= text_field_tag "menu_id", nil, placeholder: "Menu Id", class: "form-field" %>
       <%= text_field_tag "name", nil, placeholder: "Name", class: "form-field" %>
@@ -11,9 +11,15 @@ Menu Page
       <input type='submit' value="Add Menu Item", class="form-field btn-outline-dark" />
 <% end %>
 
+<h5 class='form-label-header'>Add Menu</h5>
+<%= form_with(url: "/menus", method: "POST", class: "form-container") do %>
+      <%= text_field_tag "name", nil, placeholder: "Menu Name", class: "form-field" %>
+      <input type='submit' value="Add Menu", class="form-field btn-outline-dark" />
+<% end %>
+
 
 <% Menu.all.each do |el| %>
-  <h4><%= "#{el.id}. #{el.name}" %></h4>
+  <h4 class='menu-table-header'><%= "#{el.id}. #{el.name}" %></h4>
   <%= render partial: "menu-table",
              locals: { menu_data: MenuItem.menu_by_id(el.id) } %>
 <% end %>

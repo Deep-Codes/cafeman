@@ -17,6 +17,13 @@ Menu Page
       <input type='submit' value="Add Menu", class="form-field btn-outline-dark" />
 <% end %>
 
+<h5 class='form-label-header'>Change Active Menu</h5>
+<%= form_with(url: "/active_menus/1", method: "PUT", class: "form-container") do %>
+      <%= text_field_tag "menu_id", nil, placeholder: "Menu Id", class: "form-field", type: "number" %>
+      <input type='submit' value="Update Active Menu", class="form-field btn-outline-dark" />
+<% end %>
+
+<h5 class='form-label-header'>Active Menu: <%= Menu.get_active_menu_name %></h5>
 
 <% Menu.all.each do |el| %>
   <h4 class='menu-table-header'><%= "#{el.id}. #{el.name}" %></h4>

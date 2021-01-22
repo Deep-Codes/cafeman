@@ -1,0 +1,8 @@
+<h1 class='heading'>Order Here </h1>
+
+<h5 class='form-label-header'>Active Menu: <%= Menu.get_active_menu_name %></h5>
+
+<% # <button type="button" class="btn btn-outline-dark my-20">Create Order</button> %>
+
+  <%= render partial: "user-menu-table",
+             locals: { menu_data: MenuItem.menu_by_id(ActiveMenu.first.active_menu) } %>

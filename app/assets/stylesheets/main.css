@@ -9,8 +9,14 @@ table {
   table-layout: fixed;
   word-wrap: break-word;
 }
+.table-width-fixed {
+  table-layout: auto !important;
+}
 .menu-table-header {
   margin-top: 25px;
+}
+.form-quantity {
+  width: 80px !important;
 }
 /* Trash Icon Size */
 .trash {

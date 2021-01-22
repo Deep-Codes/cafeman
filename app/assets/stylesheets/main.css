@@ -16,7 +16,8 @@ table {
   margin-top: 25px;
 }
 .form-quantity {
-  width: 80px !important;
+  max-width: 80px !important;
+  margin: 0px;
 }
 /* Trash Icon Size */
 .trash {

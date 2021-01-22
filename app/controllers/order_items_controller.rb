@@ -39,4 +39,10 @@ class OrderItemsController < ApplicationController
     new_order_item.update!(count: order_menu_count)
     # redirect_to orders_path
   end
+
+  def destroy
+    id = params[:id]
+    OrderItem.find(id).destroy
+    redirect_to orders_path
+  end
 end

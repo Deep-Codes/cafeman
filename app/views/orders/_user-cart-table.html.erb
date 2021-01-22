@@ -1,0 +1,22 @@
+<table class="table  table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cart_data.each do |item| %>
+        <tr>
+          <td ><%= item.menu_item_name %></td>
+          <td><%= item.menu_item_price %></td>
+          <td>
+            <%= form_with(url: "/menu_items", method: "POST", class: "form-container") do %>
+              <%= text_field_tag "count", nil, type: "number", class: "form-field", value: "#{item.count}" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

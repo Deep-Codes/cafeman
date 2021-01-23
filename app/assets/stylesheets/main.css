@@ -61,3 +61,13 @@ table {
   margin: 20px 0px;
   display: flex;
 }
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+.logo-name {
+  font-size: 30px;
+  font-weight: bold;
+}

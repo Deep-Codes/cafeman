@@ -10,13 +10,15 @@
     <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
-  <body class='container'>
-   <% if @current_user %>
-      <div class='user-header'>
-        <h6>Welcome Back <%= @current_user.name %> , <%= @current_user.role %>! <h6>
+  <nav class="nav-container">
+    <h1 class='logo-name'>Cafeman</h1> 
+    <% if @current_user %>
+        <h6><%= @current_user.name %> , <%= @current_user.role %>! <h6>
         <%= link_to "Sign-Out", destroy_session_path, method: "delete" %>
-      </div>
     <% end %>
+  </nav>
+
+  <body class='container'>
     <%= yield %>
   </body>
 </html>

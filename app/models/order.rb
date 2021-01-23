@@ -11,4 +11,16 @@ class Order < ActiveRecord::Base
     order_id = Order.where(user_id: id).where(order_status: type).pluck(:id)[0]
     all.find(order_id).order_items.sum(:count)
   end
+
+  def self.get_total_items_count(id)
+    Order.find(id).order_items.sum(:count)
+  end
+
+  def self.get_total_items_price(id)
+    all.find(id).order_items.get_total_price
+  end
+
+  def self.get_users_active_order_ids(user_id)
+    all.where(user_id: user_id).where(order_status: "queue").ids
+  end
 end

@@ -2,9 +2,10 @@
 
 <h2> UserId: <%= @current_user.id %> </h2>
 
-<%= render partial: "user-order-cart",
-           locals: { cart_data: OrderItem.get_users_active_order(@current_user.id) } %>
+<% Order.get_users_active_order_ids(@current_user.id).each do |id| %>
 
-
-<h3 class='form-label-header my-20'>Total Price: <%= Order.get_order_price(@current_user.id, "queue") %></h3>
-<h3 class='form-label-header my-20'>Total Items: <%= Order.get_total_items(@current_user.id, "queue") %></h3>  
+  <%= render partial: "user-order-cart",
+             locals: { cart_data: Order.find(id).order_items } %>
+  <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_count(id) %></h4>
+  <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_price(id) %></h4>
+<% end %>

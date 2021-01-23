@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :users
   get "/user/orders/", to: "user_orders#index", as: "user_orders"
   get "/active/orders/", to: "active_orders#index", as: "active_orders"
+  get "/user/completed/", to: "user_completed_orders#index", as: "completed_orders"
 end

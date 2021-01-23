@@ -23,4 +23,8 @@ class Order < ActiveRecord::Base
   def self.get_users_active_order_ids(user_id)
     all.where(user_id: user_id).where(order_status: "queue").ids
   end
+
+  def self.get_users_completed_order_ids(user_id)
+    all.where(user_id: user_id).where(order_status: "completed").ids
+  end
 end

@@ -3,7 +3,7 @@ class ActiveOrdersController < ApplicationController
 
   def index
     if current_user.role == "owner"
-      render "active/orders"
+      render "index"
     else
       redirect_to orders_path
     end

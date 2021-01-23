@@ -1,0 +1,15 @@
+<h1 class= "heading">Delivered Orders</h1>
+
+<% if Order.get_users_completed_order_ids(@current_user.id) == [] %>
+  <h2> No Order Have Been Completed Yet ! </h2>
+<% end %>
+
+<% if Order.get_users_completed_order_ids(@current_user.id) != [] %>
+  <% Order.get_users_completed_order_ids(@current_user.id).each do |id| %>
+
+    <%= render partial: "user-completed-order",
+               locals: { cart_data: Order.find(id).order_items } %>
+    <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_count(id) %></h4>
+    <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_price(id) %></h4>
+  <% end %>
+<% end %>

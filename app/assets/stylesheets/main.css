@@ -53,3 +53,7 @@ table {
 .form-label-header {
   margin: 0px;
 }
+.user-header {
+  display: flex;
+  justify-content: space-between;
+}

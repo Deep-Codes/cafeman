@@ -13,8 +13,8 @@
   <body class='container'>
    <% if @current_user %>
       <div class='user-header'>
-        Welcome Back <%= @current_user.name %> , <%= @current_user.role %>! 
-        
+        <h6>Welcome Back <%= @current_user.name %> , <%= @current_user.role %>! <h6>
+        <%= link_to "Sign-Out", destroy_session_path, method: "delete" %>
       </div>
     <% end %>
     <%= yield %>

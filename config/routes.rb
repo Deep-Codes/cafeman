@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/" => "home#index"
   resources :menus
   resources :menu_items
   resources :active_menus

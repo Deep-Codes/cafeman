@@ -5,6 +5,13 @@
     <%= link_to "Completed Order", "/user/completed", class: "btn btn-outline-dark mr-20" %>
 </div>
 
+<% if @current_user.role == "owner" %>
+<div class="links-container">
+    <%= link_to "Edit Menu & Items ", "/menus", class: "btn btn-outline-dark mr-20" %>
+    <%= link_to "Delivered Orders", "/owner/completed", class: "btn btn-outline-dark mr-20" %>
+</div>
+<% end %>
+
 <h5> UserId: <%= @current_user.id %> </h5>
 
 <% Order.get_users_active_order_ids(@current_user.id).each do |id| %>

@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   # ? Destroying the Session
   def destroy
+    session[:current_order_id] = nil
     session[:current_user_id] = nil
     @current_user = nil
     redirect_to "/"

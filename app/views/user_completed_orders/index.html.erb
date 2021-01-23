@@ -5,6 +5,13 @@
     <%= link_to "Active Order", "/user/orders", class: "btn btn-outline-dark mr-20" %>
 </div>
 
+<% if @current_user.role == "owner" %>
+<div class="links-container">
+    <%= link_to "Edit Menu & Items ", "/menus", class: "btn btn-outline-dark mr-20" %>
+    <%= link_to "Completed Order", "/owner/completed", class: "btn btn-outline-dark mr-20" %>
+</div>
+<% end %>
+
 <% if Order.get_users_completed_order_ids(@current_user.id) == [] %>
   <h2> No Order Have Been Completed Yet ! </h2>
 <% end %>

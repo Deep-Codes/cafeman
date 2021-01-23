@@ -17,6 +17,9 @@ class OrdersController < ApplicationController
     id = params[:id]
     order_status = params[:order_status]
     Order.find(id).update!(order_status: "queue")
+    # ? Destroy the Session once the order is placed
+    # ? redirect to users/orders/
+    session[:current_order_id] = nil
     redirect_to "/user/orders/"
   end
 end

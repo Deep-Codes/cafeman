@@ -9,13 +9,17 @@
 
 <h3 class='form-label-header'>Your Cart: </h3>
 
+<% if Order.find(session[:current_order_id]).order_items != [] %>
+
 <%= render partial: "user-cart-table",
            locals: { cart_data: Order.find(session[:current_order_id]).order_items } %>
 
-<h3 class='form-label-header my-20'>Total Price: <%= Order.get_order_price(session[:current_order_id]) %></h3>
-<h3 class='form-label-header my-20'>Total Items: <%= Order.get_total_items(session[:current_order_id]) %></h3>  
+  <h3 class='form-label-header my-20'>Total Price: <%= Order.get_order_price(1, "cart") %></h3>
+  <h3 class='form-label-header my-20'>Total Items: <%= Order.get_total_items(1, "cart") %></h3>  
 
 
-<%= form_with(url: "/orders/#{session[:current_order_id]}?order_status=queue", method: "PUT", class: "form-container") do %>
-    <button class='btn btn-outline-dark' onclick="this.form.submit()">Place Order</button>
+  <%= form_with(url: "/orders/#{session[:current_order_id]}?order_status=queue", method: "PUT", class: "form-container") do %>
+      <button class='btn btn-outline-dark' onclick="this.form.submit()">Place Order</button>
+  <% end %>
+
 <% end %>

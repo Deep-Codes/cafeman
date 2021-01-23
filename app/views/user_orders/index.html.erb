@@ -1,7 +1,10 @@
 <h1>Your Order Details:</h1>
 
-<%= render partial: "user-order-cart",
-           locals: { cart_data: OrderItem.get_users_active_order(1) } %>
+<h2> UserId: <%= @current_user.id %> </h2>
 
-<h3 class='form-label-header my-20'>Total Price: <%= Order.get_order_price(1, "queue") %></h3>
-<h3 class='form-label-header my-20'>Total Items: <%= Order.get_total_items(1, "queue") %></h3>  
+<%= render partial: "user-order-cart",
+           locals: { cart_data: OrderItem.get_users_active_order(@current_user.id) } %>
+
+
+<h3 class='form-label-header my-20'>Total Price: <%= Order.get_order_price(@current_user.id, "queue") %></h3>
+<h3 class='form-label-header my-20'>Total Items: <%= Order.get_total_items(@current_user.id, "queue") %></h3>  

@@ -3,10 +3,12 @@ class OrdersController < ApplicationController
   # ! For Testing Purpose ONLY
   skip_before_action :verify_authenticity_token
 
+  current_user = @current_user
+
   # ? => /orders
   def index
     if session[:current_order_id] == nil
-      new_order = Order.create(user_id: 2, delivered_at: "", order_status: "cart")
+      new_order = Order.create(user_id: current_user.id, delivered_at: "", order_status: "cart")
       session[:current_order_id] = new_order.id
     end
   end

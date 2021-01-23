@@ -1,6 +1,13 @@
 class MenusController < ApplicationController
+  current_user = @current_user
+
   # ? => /menus
   def index
+    if current_user.role == "owner"
+      render "index"
+    else
+      redirect_to orders_path
+    end
   end
 
   # ? => /menus

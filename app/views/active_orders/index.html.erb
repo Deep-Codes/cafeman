@@ -1,5 +1,10 @@
 <h1 class='heading'>Active Orders Here for Owner</h1>
 
+<div class="links-container">
+    <%= link_to "Place Order", orders_path, class: "btn btn-outline-dark mr-20" %>
+    <%= link_to "Completed Order", "/owner/completed", class: "btn btn-outline-dark mr-20" %>
+</div>
+
 <h3>Total Pending Orders: <%= Order.where(order_status: "queue").count %></h3>
 
 <% Order.where(order_status: "queue").each do |order| %>

@@ -74,3 +74,16 @@ table {
 .nav-logo {
   width: 40px;
 }
+.hero-container {
+  margin: 60px 0px;
+}
+.hero-heading {
+  font-weight: bold;
+  margin: 30px 0px;
+  font-size: 70px;
+}
+footer {
+  padding-top: 40px;
+  font-size: 18px;
+  font-weight: 600;
+}

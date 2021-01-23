@@ -1,0 +1,14 @@
+<h1 class='heading'>Active Orders Here for Owner</h1>
+
+<h3>Total Pending Orders: <%= Order.where(order_status: "queue").count %></h3>
+
+<div class='my-20'>
+<% Order.where(order_status: "queue").each do |order| %>
+  <h3>Order By:  <%= Order.find(order.id).user.name %> </h3>
+  <h5> Total Bill: <%= Order.get_order_price(order.user_id, "queue") %> </h5>
+  <%= render partial: "active-order-cart",
+             locals: { cart_data: Order.find(order.id).order_items } %>
+
+<% end %>
+</div>
+

@@ -17,5 +17,6 @@ class OrdersController < ApplicationController
     id = params[:id]
     order_status = params[:order_status]
     Order.find(id).update!(order_status: "queue")
+    redirect_to "/user/orders/"
   end
 end

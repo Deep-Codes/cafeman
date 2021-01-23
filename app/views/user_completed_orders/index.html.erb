@@ -14,7 +14,10 @@
 
     <%= render partial: "user-completed-order",
                locals: { cart_data: Order.find(id).order_items } %>
-    <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_count(id) %></h4>
-    <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_price(id) %></h4>
+    
+    <div class='flex my-20'>
+        <p class='mr-20'>Total Items: <%= Order.get_total_items_count(id) %></p>
+        <p class='mr-20'>Total Price: <%= Order.get_total_items_price(id) %></p>
+    </div>
   <% end %>
 <% end %>

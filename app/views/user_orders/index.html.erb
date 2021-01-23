@@ -5,7 +5,7 @@
     <%= link_to "Completed Order", "/user/completed", class: "btn btn-outline-dark mr-20" %>
 </div>
 
-<h2> UserId: <%= @current_user.id %> </h2>
+<h5> UserId: <%= @current_user.id %> </h5>
 
 <% Order.get_users_active_order_ids(@current_user.id).each do |id| %>
 

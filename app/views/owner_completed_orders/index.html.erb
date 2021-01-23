@@ -1,0 +1,8 @@
+<h1 class='heading'>Completed Orders by Owner:</h1>
+
+<% Order.where(order_status: "completed").ids.each do |id| %>
+    <%= render partial: "owner-completed-order",
+               locals: { cart_data: Order.find(id).order_items } %>
+    <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_count(id) %></h4>
+    <h4 class='form-label-header my-20'>Total Items: <%= Order.get_total_items_price(id) %></h4>
+<% end %>

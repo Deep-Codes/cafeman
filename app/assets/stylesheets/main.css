@@ -57,3 +57,7 @@ table {
   display: flex;
   justify-content: space-between;
 }
+.links-container {
+  margin: 20px 0px;
+  display: flex;
+}

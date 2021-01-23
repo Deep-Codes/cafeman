@@ -16,10 +16,15 @@ class OrdersController < ApplicationController
   def update
     id = params[:id]
     order_status = params[:order_status]
-    Order.find(id).update!(order_status: "queue")
-    # ? Destroy the Session once the order is placed
-    # ? redirect to users/orders/
-    session[:current_order_id] = nil
-    redirect_to "/user/orders/"
+    if order_status == "queue"
+      Order.find(id).update!(order_status: "queue")
+      # ? Destroy the Session once the order is placed
+      # ? redirect to users/orders/
+      session[:current_order_id] = nil
+      redirect_to "/user/orders/"
+    elsif order_status == "completed"
+      Order.find(id).update!(order_status: "completed")
+      redirect_to "/active/orders"
+    end
   end
 end

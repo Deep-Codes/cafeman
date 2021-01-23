@@ -2,13 +2,15 @@
 
 <h3>Total Pending Orders: <%= Order.where(order_status: "queue").count %></h3>
 
-<div class='my-20'>
 <% Order.where(order_status: "queue").each do |order| %>
+<div class='my-20' >
   <h3>Order By:  <%= Order.find(order.id).user.name %> </h3>
   <h5> Total Bill: <%= Order.get_order_price(order.user_id, "queue") %> </h5>
   <%= render partial: "active-order-cart",
              locals: { cart_data: Order.find(order.id).order_items } %>
-
-<% end %>
+  <%= form_with(url: "/orders/#{order.id}?order_status=completed", method: "PUT", class: "form-container") do %>
+      <button class='btn btn-outline-dark' onclick="this.form.submit()">Deliver Order</button>
+  <% end %>
 </div>
+<% end %>
 

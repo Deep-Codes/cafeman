@@ -11,10 +11,14 @@
   </head>
 
   <nav class="nav-container">
-    <h1 class='logo-name'>Cafeman</h1> 
+    
+    <h1 class='logo-name'>
+      <img src="/chef.svg" class='nav-logo'>
+      Cafeman
+    </h1> 
     <% if @current_user %>
         <h6><%= @current_user.name %> , <%= @current_user.role %>! <h6>
-        <%= link_to "Sign-Out", destroy_session_path, method: "delete" %>
+        <%= link_to "Sign-Out", destroy_session_path, method: "delete", class: "btn btn-outline-dark" %>
     <% end %>
   </nav>
 

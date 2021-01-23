@@ -4,10 +4,6 @@ class MenuItemsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # ? => /menu_items
-  def index
-  end
-
-  # ? => /menu_items
   # ? => POST
   def create
     menu_id = params[:menu_id]

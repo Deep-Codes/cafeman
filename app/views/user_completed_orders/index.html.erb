@@ -2,7 +2,7 @@
 
 <div class="links-container">
     <%= link_to "Place Order", orders_path, class: "btn btn-outline-dark mr-20" %>
-    <%= link_to "Active Order", "/user/orders", class: "btn btn-outline-dark mr-20" %>
+    <%= link_to "Pending Order (user)", "/user/orders", class: "btn btn-outline-dark mr-20" %>
 </div>
 
 <% if @current_user.role == "owner" %>

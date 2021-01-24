@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  current_user = @current_user
 
   # ? => /orders
   def index

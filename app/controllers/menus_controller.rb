@@ -1,5 +1,4 @@
 class MenusController < ApplicationController
-  current_user = @current_user
 
   # ? => /menus
   def index

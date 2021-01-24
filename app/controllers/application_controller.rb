@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :ensure_logged_in
 
+  def current_user
+    @current_user
+  end
+
   def ensure_logged_in
     # ? halt that request cycle
     unless current_user

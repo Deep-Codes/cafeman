@@ -14,8 +14,8 @@ class OrdersController < ApplicationController
     id = params[:id]
     order_status = params[:order_status]
     if order_status == "queue"
-      flag = Order.check_if_in_active_menu(id)
-      if flag
+      is_order_still_valid = Order.check_if_in_active_menu(id)
+      if is_order_still_valid
         Order.find(id).update!(order_status: "queue")
         flash[:success] = "Your Order has been Succesfully Placed :)"
       else

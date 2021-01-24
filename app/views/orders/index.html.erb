@@ -1,5 +1,5 @@
 
-<% if @current_user.role == "owner" %>  
+<% if @current_user.is_owner? %>  
   <div class="links-container">
     <%= link_to "Edit Menu & Items ", "/menus", class: "btn btn-outline-dark mr-20" %>
     <%= link_to "See Orders", "/active/orders", class: "btn btn-outline-dark mr-20" %>

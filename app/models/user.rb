@@ -3,4 +3,8 @@ class User < ActiveRecord::Base
   validates :role, presence: true
   validates :email, presence: true
   has_secure_password
+
+  def is_owner?
+    role == "owner"
+  end
 end

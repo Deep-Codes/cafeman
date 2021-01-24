@@ -1,8 +1,4 @@
 class OrdersController < ApplicationController
-
-  # ! For Testing Purpose ONLY
-  skip_before_action :verify_authenticity_token
-
   current_user = @current_user
 
   # ? => /orders

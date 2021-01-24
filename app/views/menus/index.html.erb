@@ -26,7 +26,7 @@ Menu Page
 
 <h5 class='form-label-header'>Change Active Menu</h5>
 <%= form_with(url: "/active_menus/1", method: "PUT", class: "form-container") do %>
-      <%= text_field_tag "menu_id", nil, placeholder: "Menu Id", class: "form-field", type: "number" %>
+      <%= text_field_tag "menu_id", nil, placeholder: "Menu Id", value: ActiveMenu.first.active_menu, class: "form-field", type: "number" %>
       <input type='submit' value="Update Active Menu", class="form-field btn-outline-dark" />
 <% end %>
 

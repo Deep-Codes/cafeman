@@ -14,7 +14,13 @@ class MenusController < ApplicationController
   # ? POST
   def create
     name = params[:name]
-    new_menu = Menu.create!(name: name)
-    redirect_to menus_path
+    new_menu = Menu.new(name: name)
+    new_menu.save
+    if new_menu.save
+      redirect_to menus_path
+    else
+      flash[:error] = new_menu.errors.full_messages.join(" , ")
+      redirect_to menus_path
+    end
   end
 end

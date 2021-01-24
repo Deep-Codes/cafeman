@@ -10,8 +10,14 @@ class MenuItemsController < ApplicationController
     name = params[:name]
     description = params[:description]
     price = params[:price]
-    new_menu_item = MenuItem.create!(menu_id: menu_id, name: name, description: description, price: price)
-    redirect_to menus_path
+    new_menu_item = MenuItem.new(menu_id: menu_id, name: name, description: description, price: price)
+    new_menu_item.save
+    if new_menu_item.save
+      redirect_to menus_path
+    else
+      flash[:error] = new_menu_item.errors.full_messages.join(" , ")
+      redirect_to menus_path
+    end
   end
 
   # ? => DELETE

@@ -12,6 +12,10 @@
 <% Order.where(order_status: "queue").each do |order| %>
 <div class='my-20' >
   <h3>Order By:  <%= Order.find(order.id).user.name %> </h3>
+  <% if order.user.role == "clerk" %>
+    <span class="badge bg-dark text-light my-20">Walk-in customer</span> 
+  <% end %>
+  
   <h5> Total Bill: <%= Order.get_order_price(order.user_id, "queue") %> </h5>
   <%= render partial: "active-order-cart",
              locals: { cart_data: Order.find(order.id).order_items } %>

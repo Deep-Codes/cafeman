@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get "/active/orders/", to: "active_orders#index", as: "active_orders"
   get "/user/completed/", to: "user_completed_orders#index", as: "completed_orders"
   get "/owner/completed/", to: "owner_completed_orders#index", as: "owner_completed_orders"
+  get "/dashboard", to: "dashboard#index", as: "dashboard"
 end

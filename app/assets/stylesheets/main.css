@@ -90,3 +90,9 @@ footer {
 .label {
   margin-bottom: 0px;
 }
+.dashboard-container {
+  margin: 20px 0px;
+}
+.dashboard-container h3 {
+  margin-bottom: 10px;
+}

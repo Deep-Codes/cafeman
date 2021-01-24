@@ -19,7 +19,13 @@ class OrdersController < ApplicationController
     id = params[:id]
     order_status = params[:order_status]
     if order_status == "queue"
-      Order.find(id).update!(order_status: "queue")
+      flag = Order.check_if_in_active_menu(id)
+      if flag
+        Order.find(id).update!(order_status: "queue")
+        flash[:success] = "Your Order has been Succesfully Placed :)"
+      else
+        flash[:error] = "Your Order is Cancelled as it had Items that are No Longer Available :("
+      end
       # ? Destroy the Session once the order is placed
       # ? redirect to users/orders/
       session[:current_order_id] = nil

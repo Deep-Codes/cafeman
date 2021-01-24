@@ -1,8 +1,5 @@
 class ActiveMenusController < ApplicationController
 
-  # ! For Testing Purpose ONLY
-  skip_before_action :verify_authenticity_token
-
   # ? => /active_menus
   # ? GET
   def index

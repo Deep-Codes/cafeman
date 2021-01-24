@@ -1,8 +1,5 @@
 class MenuItemsController < ApplicationController
 
-  # ! For Testing Purpose ONLY
-  skip_before_action :verify_authenticity_token
-
   # ? => /menu_items
   # ? => POST
   def create

@@ -1,6 +1,6 @@
 class OwnerCompletedOrdersController < ApplicationController
   def index
-    if current_user.role == "owner"
+    if current_user.is_owner?
       render "index"
     else
       redirect_to orders_path

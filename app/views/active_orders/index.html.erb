@@ -4,6 +4,7 @@
     <%= link_to "Place Order", orders_path, class: "btn btn-outline-dark mr-20" %>
     <%= link_to "Completed Orders", "/owner/completed", class: "btn btn-outline-dark mr-20" %>
     <%= link_to "Edit Menu & Items ", "/menus", class: "btn btn-outline-dark mr-20" %>
+    <%= link_to "Dashboard", "/dashboard", class: "btn btn-outline-dark mr-20" %>
 </div>
 
 <h3>Total Pending Orders: <%= Order.where(order_status: "queue").count %></h3>

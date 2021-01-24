@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
       session[:current_user_role] = user.role
+      flash[:success] = "Succesfully Logged-In :)"
       redirect_to "/"
     else
       flash[:error] = "Invalid Login Attemp Please Retry"

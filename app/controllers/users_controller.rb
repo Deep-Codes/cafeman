@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     if new_user.save
       session[:current_user_id] = new_user.id
       session[:current_user_role] = new_user.role
+      flash[:success] = "Succesfully Logged-In :)"
       redirect_to "/"
     else
       flash[:error] = new_user.errors.full_messages.join(" , ")

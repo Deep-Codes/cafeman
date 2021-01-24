@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       session[:current_user_role] = user.role
       redirect_to "/"
     else
-      render plain: "Incorrect Passowrd"
+      flash[:error] = "Invalid Login Attemp Please Retry"
+      redirect_to new_sessions_path
     end
   end
 

@@ -96,3 +96,9 @@ footer {
 .dashboard-container h3 {
   margin-bottom: 10px;
 }
+.nav-link {
+  color: inherit;
+}
+.nav-link:hover {
+  color: inherit;
+}

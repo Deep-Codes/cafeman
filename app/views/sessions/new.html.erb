@@ -1,5 +1,5 @@
 <h1 class="heading">
- SignIn User
+ Log In User
 </h1>
 
 <%= form_with url: sessions_path, class: "form-container flex-down" do |form| %>
@@ -10,6 +10,6 @@
     <p class='label'>Password:</p>
     <%= form.password_field :password, class: "form-field" %>
 
-    <%= form.submit "Sign-In", class: "form-field btn-outline-dark" %>
+    <%= form.submit "Login", class: "form-field btn-outline-dark" %>
 
 <% end %>

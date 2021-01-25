@@ -12,13 +12,15 @@
 
   <nav class="nav-container">
     
-    <h1 class='logo-name'>
+    <%= link_to "/orders", class: "nav-link" do %>
+     <h1 class='logo-name'>
       <img src="/chef.svg" class='nav-logo'>
       Cafeman
-    </h1> 
+     </h1> 
+    <% end %>
     <% if @current_user %>
         <h6><%= @current_user.name %> , <%= @current_user.role %>! <h6>
-        <%= link_to "Sign-Out", destroy_session_path, method: "delete", class: "btn btn-outline-dark" %>
+        <%= link_to "Logout", destroy_session_path, method: "delete", class: "btn btn-outline-dark" %>
     <% end %>
   </nav>
 

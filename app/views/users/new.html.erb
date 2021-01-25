@@ -5,8 +5,8 @@
     <p class='label'>Name: </p>
     <%= form.text_field :name, class: "form-field" %>
 
-    <p class='label'>Role: (customer , clerk , owner) </p>
-    <%= form.text_field :role, class: "form-field" %>
+    <p class='label'>Role: </p>
+    <%= select_tag "role", options_for_select(["customer", "clerk", "owner"], "customer"), class: "form-field" %>
 
     <p class='label'>Email: </p>
     <%= form.email_field :email, class: "form-field" %>

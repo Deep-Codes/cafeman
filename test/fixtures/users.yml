@@ -1,0 +1,19 @@
+# Users Stuff
+
+deep:
+  name: Deepankar Bhade
+  role: customer
+  email: deepankar@gmail.com
+  password_digest: deepankar
+
+duma:
+  name: Duma Bhade
+  role: customer
+  email: duma@gmail.com
+  password_digest: duma
+
+dan:
+  name: Danillo Bhade
+  role: customer
+  email: dan@gmail.com
+  password_digest: danillo

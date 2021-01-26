@@ -12,6 +12,18 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :redirect
     follow_redirect!
+    assert_equal "Succesfully Logged-In :)", flash[:success]
+    assert_not_nil session[:current_user_id]
+    assert_not_nil session[:current_user_role]
+    assert_equal "/", path
+  end
+
+  test "should logout a new user" do
+    delete "/signout"
+    assert_response :redirect
+    follow_redirect!
+    assert_nil session[:current_user_id]
+    assert_nil session[:current_user_role]
     assert_equal "/", path
   end
 end

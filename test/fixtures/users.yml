@@ -8,7 +8,7 @@ deep:
 
 duma:
   name: duma
-  role: customer
+  role: owner
   email: duma@gmail.com
   password_digest: <%= BCrypt::Password.create('duma') %>
 

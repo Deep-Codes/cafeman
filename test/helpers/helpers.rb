@@ -4,8 +4,8 @@ def signin(user)
 end
 
 def create_menu
-  post "/menus/",
-    params: { name: "test_menu" }
+  menu = Menu.create(name: "Lunch")
+  return menu
 end
 
 def create_order

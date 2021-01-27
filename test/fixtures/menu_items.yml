@@ -11,9 +11,3 @@ pizza:
   name: Pizza
   description: Italian Stuff
   price: 90
-
-fries:
-  menu_id: 1
-  name: Fries
-  description: Not French
-  price: 80

@@ -9,8 +9,9 @@
 
 1. [Features](#features)
 2. [Showcase](#showcase)
-3. [Acknowledgements](#acknowledgements)
-4. [Contributing](#contributing)
+3. [Testing](#testing)
+4. [Acknowledgements](#acknowledgements)
+5. [Contributing](#contributing)
 
 ## 🥳 Features:
 
@@ -42,7 +43,20 @@ Cafeman is a Web Application developed with Ruby on Rails , PostgresQL which off
 
 ![Menu-Page](/media/completed-page.png)
 
-## 🏗 Contributing
+## 🧪 Testing:
+
+Cafeman uses the Built-in Testing library.
+Test are important as it ensures that your code adheres to the desired functionality even after some major code refactoring. You can test your APIs , Model Methods and much more without trying each by yourselves.
+
+To run the Tests:
+
+`rails test`
+
+![Running Tests](/media/test.png)
+
+[Rails Testing Documentation](https://guides.rubyonrails.org/testing.html) is a fantastic place to learn and start writing tests for your Rails Application.
+
+## 🏗 Contributing:
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 

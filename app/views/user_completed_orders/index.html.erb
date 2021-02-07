@@ -13,12 +13,12 @@
 </div>
 <% end %>
 
-<% if Order.get_users_completed_order_ids(@current_user.id) == [] %>
+<% if @order_ids == [] %>
   <h2> No Order Have Been Completed Yet ! </h2>
 <% end %>
 
-<% if Order.get_users_completed_order_ids(@current_user.id) != [] %>
-  <% Order.get_users_completed_order_ids(@current_user.id).each do |id| %>
+<% if @order_ids != [] %>
+  <% @order_ids.each do |id| %>
 
     <%= render partial: "user-completed-order",
                locals: { cart_data: Order.find(id).order_items } %>

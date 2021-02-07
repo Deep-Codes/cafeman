@@ -38,11 +38,7 @@ class Order < ActiveRecord::Base
   end
 
   def self.get_profit
-    orders = Order.where(order_status: "completed")
-    total_profit = orders.inject(0) do |sum, order|
-      sum += order.order_items.get_total_price
-      sum
-    end
-    total_profit
+    completed_orders = Order.where(order_status: "completed").joins(:order_items)
+    total_profit = completed_orders.sum("order_items.count * order_items.menu_item_price")
   end
 end

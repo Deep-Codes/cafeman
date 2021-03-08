@@ -22,10 +22,14 @@ class Order < ActiveRecord::Base
   def self.check_if_in_active_menu(id)
     is_order_still_valid = true
     list = []
+    # * Grabbing the ActiveMenu at the moment of placing the Order
     active_menu_id = ActiveMenu.first.active_menu
+    # * Creating a List of OrderItems based on OrderId:
     Order.find(id).order_items.each { |it| list.push(it.menu_item_id) }
+    # * ForEach OrderItems it checks if the Item Exists in the ActiveMenu
     list.each do |id|
       if MenuItem.find(id).menu_id != active_menu_id
+        # * if the Item is not in ActiveMenu returns False and Hence Cancels Order
         is_order_still_valid = false
       end
     end
@@ -38,11 +42,7 @@ class Order < ActiveRecord::Base
   end
 
   def self.get_profit
-    orders = Order.where(order_status: "completed")
-    total_profit = orders.inject(0) do |sum, order|
-      sum += order.order_items.get_total_price
-      sum
-    end
-    total_profit
+    completed_orders = Order.where(order_status: "completed").joins(:order_items)
+    total_profit = completed_orders.sum("order_items.count * order_items.menu_item_price")
   end
 end

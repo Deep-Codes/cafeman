@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def ensure_owner
+    # ? Route to Owners
+    unless @current_user.role == "owner"
+      redirect_to "/"
+    end
+  end
+
   # ? Memoization
   def current_user
     return @current_user if @current_user

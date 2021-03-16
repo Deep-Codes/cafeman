@@ -1,4 +1,5 @@
 class MenuItemsController < ApplicationController
+  before_action :ensure_owner
 
   # ? => /menu_items
   # ? => POST
